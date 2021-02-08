@@ -1,0 +1,1029 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27"
+     xml:base="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:geo="http://www.w3.org/2003/01/geo/wgs84_pos#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:lite="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa#"
+     xmlns:unit="http://purl.org/NET/ssnx/qu/qu#"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposedBy">
+        <owl:inverseOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposes"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+        <rdfs:comment>A Device is exposed by a service.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposes -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#exposes">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <rdfs:comment>A Service exposes Device.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#generatedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#generatedBy">
+        <owl:inverseOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#generates"/>
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#generates -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#generates">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasCoverage -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasCoverage">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+        <rdfs:comment>Links the devices with their coverages.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasLocation -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasLocation">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasPoint -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasPoint">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+        <rdfs:comment>Links the coverage with the points that describe the coverage (e.g. A square coverage is defined with two points in a diagonal of the square).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+        <rdfs:comment>Links the sensor or attribute with the quantity kind it measures (e.g. A sensor -sensor1- measures temperature: sensor1 hasQuantityKind temperature).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasSensingDevice -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasSensingDevice">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice"/>
+        <rdfs:comment>Links a sensor with the sensing device the same way as SSN.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+        <rdfs:comment>Links the sensor with the units of the quantity kind it measures (e.g. A sensor -sensor1- measures temperature in Celsius: sensor1 hasUnit celsius).</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#providedBy -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#providedBy">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#hasSubsystem -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/ssnx/ssn#hasSubsystem">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#hasResult -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa#hasResult">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa#Result"/>
+        <rdfs:comment>Relation linking an Observation and a Result, which contains a value representing the value associated with the observed Property - IoT stream.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#madeByStream -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa#madeByStream">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Relation between an Observation and the stream able to observe it.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#madeObservation -->
+
+    <owl:ObjectProperty rdf:about="http://www.w3.org/ns/sosa#madeObservation">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+        <rdfs:comment>Relation between a IoT stream and an Observations it has made.</rdfs:comment>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#CO -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#CO">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Carbon oxide</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#H -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#H">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+        <rdfs:comment>Hydrogen</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Humidity -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Humidity">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Humidity</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#NO2 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#NO2">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Nitrogen dioxide</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#O3 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#O3">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Ozone</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#P -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#P">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Pressure</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM10 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM10">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Particulate matter 0.1</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM25 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM25">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Particulate matter 2.5</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SO2 -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SO2">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Sulfur dioxide</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#T -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#T">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Temperature -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Temperature">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Temeperature</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#W -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#W">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#WG -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#WG">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+        <rdfs:comment>Water gauge</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#endpoint -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#endpoint">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+        <rdfs:comment>Endpoint of the service. It is usually a URL where the service is available.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#interfaceType -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#interfaceType">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+        <rdfs:comment>Defines the type of interface of the service endpoint.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#radius -->
+
+    <owl:DatatypeProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#radius">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Circle"/>
+        <rdfs:comment>Specifies the radius of a circle coverage defined by a point -the center of the circle- and its radius.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lat -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lat">
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+        <rdfs:comment>Latitude</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#lon -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#lon">
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+        <rdfs:comment>Longitude</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#relativeLocation -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#relativeLocation">
+        <rdfs:domain rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+        <rdfs:comment>Location provided in relative terms, not with geo coordinates.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#resultTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa#resultTime">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+        <rdfs:comment>The result time is the time when the Observation act was completed.</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#simpleResult -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa#simpleResult">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa#Result"/>
+        <rdfs:comment>Simpel result of observation - Good, Moderate, Bad</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#windowEnd -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa#windowEnd">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>Start of observation</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#windowStart -->
+
+    <owl:DatatypeProperty rdf:about="http://www.w3.org/ns/sosa#windowStart">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        <rdfs:comment>end of observation</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#ActuatingDevice -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#ActuatingDevice">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Circle -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Circle">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasPoint"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasPoint"/>
+                <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:minQualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#generatedBy"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#providedBy"/>
+                <owl:someValuesFrom rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#madeObservation"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa#Observation"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasLocation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#madeObservation"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Polygon -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Polygon">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Rectangle -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Rectangle">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#TagDevice -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#TagDevice">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Device -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Device">
+        <rdfs:subClassOf rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#Sensor -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#Sensor">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind"/>
+                <owl:someValuesFrom rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasQuantityKind"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit"/>
+                <owl:allValuesFrom rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasUnit"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Device, agent (including humans), or software (simulation) involved in, or implementing, a (sensing) Procedure. Sensors responds to a stimulus, e.g., a change in the environment, and generates a stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#System -->
+
+    <owl:Class rdf:about="http://purl.oclc.org/NET/ssnx/ssn#System">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#hasSubsystem"/>
+                <owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#System"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#QuantityKind -->
+
+    <owl:Class rdf:about="http://purl.org/NET/ssnx/qu/qu#QuantityKind">
+        <rdfs:comment xml:lang="en">QuantityKind is an abstract classifier that represents the concept of &quot;kind of quantity&quot; that is defined as &quot;aspect common to mutually comparable quantities.&quot; A QuantityKind represents the essence of a quantity without any numerical value or unit.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#Unit -->
+
+    <owl:Class rdf:about="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    
+
+
+    <!-- http://www.w3.org/2003/01/geo/wgs84_pos#Point -->
+
+    <owl:Class rdf:about="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#Bad -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa#Bad">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa#Result"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#simpleResult"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</xsd:minInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#Good -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa#Good">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa#Result"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#simpleResult"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">50</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#Moderate -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa#Moderate">
+        <rdfs:subClassOf>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.w3.org/ns/sosa#Result"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#simpleResult"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#integer"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:minInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">51</xsd:minInclusive>
+                                    </rdf:Description>
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">99</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#Observation -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa#Observation">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#hasResult"/>
+                <owl:allValuesFrom rdf:resource="http://www.w3.org/ns/sosa#Result"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#madeByStream"/>
+                <owl:allValuesFrom rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#IoTStream"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#hasResult"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#madeByStream"/>
+                <owl:cardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:cardinality>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#resultTime"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#decimal"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#windowEnd"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.w3.org/ns/sosa#windowStart"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:comment>Activity of carrying out an (observation) Procedure to estimate or calculate a value of a Property of a FeatureOfInterest. Links to a Stream to describe what made the Observation and how; the Result is the output.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#Result -->
+
+    <owl:Class rdf:about="http://www.w3.org/ns/sosa#Result">
+        <rdfs:comment>The result of an observation,, e.g., the value for on observed property of some feature of interest such as 105 for the air quality of particular stream.</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#City -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#City">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounterPM10 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounterPM10">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#GasSensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#GasSensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#CO"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#H"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#NO2"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#O3"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#SO2"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#ug/m3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#HumiditySensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#HumiditySensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#Humidity"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#Percentage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#ParticalSensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#ParticalSensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#PM10"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#PM25"/>
+        <lite:hasSensingDevice rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounterPM10"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#ug/m3"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#PressureSensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#PressureSensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#P"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#kPa"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#RadiationSensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#RadiationSensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#UVI"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#Index"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#TemperatureSensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#TemperatureSensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#Temperature"/>
+        <lite:hasSensingDevice rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#TemperatureSensorDevice"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#degreeCelsius"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#TemperatureSensorDevice -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#TemperatureSensorDevice">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/ssnx/ssn#WaterGaugeSensor -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/ssnx/ssn#WaterGaugeSensor">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <lite:hasQuantityKind rdf:resource="http://purl.org/NET/ssnx/qu/qu#WG"/>
+        <lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#Percentage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#CO -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#CO">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#H -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#H">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#Humidity -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#Humidity">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#Index -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#Index">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#NO2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#NO2">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#O3 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#O3">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#P -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#P">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#PM10 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#PM10">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#PM25 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#PM25">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#Percentage -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#Percentage">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#SO2 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#SO2">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#Temperature -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#Temperature">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#UVI -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#UVI">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#WG -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#WG">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#degreeCelsius -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#degreeCelsius">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#kPa -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#kPa">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#ug/m3 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#ug/m3">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#ActuatingDevice"/>
+            <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#SensingDevice"/>
+            <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#TagDevice"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Circle"/>
+            <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Polygon"/>
+            <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Rectangle"/>
+        </owl:members>
+    </rdf:Description>
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.w3.org/ns/sosa#Bad"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/sosa#Good"/>
+            <rdf:Description rdf:about="http://www.w3.org/ns/sosa#Moderate"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+

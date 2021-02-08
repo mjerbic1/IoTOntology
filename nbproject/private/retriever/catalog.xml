@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+    <system systemId="http://www.w3.org/TR/2003/PR-owl-guide-20031209/wine" uri="www.w3.org/tr/2003/pr-owl-guide-20031215/wine.xml"/>
+    <system systemId="http://www.w3.org/TR/2003/PR-owl-guide-20031209/food" uri="www.w3.org/tr/2003/pr-owl-guide-20031215/food.xml"/>
+    <system systemId="http://www.w3.org/2002/07/owl" uri="www.w3.org/2002/07/owl"/>
+    <system systemId="http://www.w3.org/1999/02/22-rdf-syntax-ns" uri="www.w3.org/1999/02/22-rdf-syntax-ns"/>
+    <system systemId="http://www.w3.org/2000/01/rdf-schema" uri="www.w3.org/2000/01/rdf-schema"/>
+    <system systemId="http://www.w3.org/2003/01/geo/wgs84_pos" uri="www.w3.org/2003/01/geo/wgs84_pos.xml"/>
+    <system systemId="http://www.w3.org/ns/sosa/" uri="www.w3.org/ns/sosa/index"/>
+    <system systemId="http://purl.org/vocab/vann/" uri="vocab.org/vann/index"/>
+    <system systemId="http://purl.oclc.org/NET/UNIS/fiware/iot-lite" uri="iot.ee.surrey.ac.uk/fiware/ontologies/iot-lite"/>
+    <system systemId="http://xmlns.com/foaf/0.1/" uri="xmlns.com/foaf/0.1/index"/>
+    <system systemId="http://www.w3.org/2004/02/skos/core" uri="www.w3.org/2004/02/skos/core"/>
+    <system systemId="http://schema.org/" uri="schema.org/index"/>
+    <system systemId="http://www.w3.org/ns/sosa" uri="www.w3.org/ns/sosa/index"/>
+    <system systemId="http://purl.org/dc/elements/1.1/" uri="www.dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_elements"/>
+    <system systemId="http://purl.org/NET/ssnx/qu/qu" uri="purl.org/net/ssnx/qu/qu"/>
+    <system systemId="http://purl.oclc.org/NET/ssnx/ssn" uri="purl.oclc.org/net/ssnx/ssn"/>
+    <system systemId="http://purl.org/dc/terms/" uri="dublincore.org/specifications/dublin-core/dcmi-terms/dublin_core_terms"/>
+</catalog>

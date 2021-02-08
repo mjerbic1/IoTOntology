@@ -1,0 +1,236 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27"
+     xml:base="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27"
+     xmlns:dc="http://purl.org/dc/elements/1.1/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:foaf="http://xmlns.com/foaf/0.1/"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:skos="http://www.w3.org/2004/02/skos/core#"
+     xmlns:sosa="http://www.w3.org/ns/sosa/"
+     xmlns:vann="http://purl.org/vocab/vann/"
+     xmlns:terms="http://purl.org/dc/terms/"
+     xmlns:schema="http://schema.org/"
+     xmlns:iot-lite="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"
+     xmlns:wgs84_pos="http://www.w3.org/2003/01/geo/wgs84_pos#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27">
+        <owl:imports rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#"/>
+        <owl:imports rdf:resource="http://www.w3.org/ns/sosa/"/>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasMetadata -->
+
+    <rdf:Description rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasMetadata">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasSensingDevice -->
+
+    <owl:ObjectProperty rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#hasSensingDevice"/>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeBySensor -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeBySensor">
+        <rdfs:domain rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <rdfs:range rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    </rdf:Description>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa/madeObservation -->
+
+    <rdf:Description rdf:about="http://www.w3.org/ns/sosa/madeObservation">
+        <rdfs:domain rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <rdfs:range rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#Unit -->
+
+    <rdf:Description rdf:about="http://purl.org/NET/ssnx/qu/qu#Unit">
+        <rdfs:isDefinedBy rdf:resource="http://purl.org/NET/ssnx/qu/qu"/>
+    </rdf:Description>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#AirQualityServiceClosestStation -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#AirQualityServiceClosestStation">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Service"/>
+        <iot-lite:exposes rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#DeviceName1"/>
+        <iot-lite:exposes rdf:resource="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27#OWLNamedIndividual_a4bb60a0_55ff_46ab_bb11_3949665ebf49"/>
+        <iot-lite:endpoint>https://api.waqi.info/feed/here/?token=b339202fb010b5cf88d378e12f6c3bf486338d71</iot-lite:endpoint>
+        <iot-lite:interfaceType>REST</iot-lite:interfaceType>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#City -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#City">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Coverage"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#DeviceName1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#DeviceName1">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <iot-lite:exposedBy rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#AirQualityServiceClosestStation"/>
+        <iot-lite:hasCoverage rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#City"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#MetadataStream1 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#MetadataStream1">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#Metadata"/>
+        <iot-lite:metadataType>resolution</iot-lite:metadataType>
+        <iot-lite:metadataValue rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1024</iot-lite:metadataValue>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounter -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounter">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+        <iot-lite:hasQuantityKind rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM10"/>
+        <iot-lite:hasSensingDevice rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounterPM10"/>
+        <iot-lite:hasUnit rdf:resource="http://purl.org/NET/ssnx/qu/qu#ug/m3"/>
+        <sosa:madeObservation rdf:resource="http://www.w3.org/ns/sosa#ObservationStream1"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounterPM10 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounterPM10">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM10 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM10">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM25 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#PM25">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#QuantityKind"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#temperatureSensorRoom13C01 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#temperatureSensorRoom13C01">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#SensingDevice"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://purl.org/NET/ssnx/qu/qu#ug/m3 -->
+
+    <owl:NamedIndividual rdf:about="http://purl.org/NET/ssnx/qu/qu#ug/m3">
+        <rdf:type rdf:resource="http://purl.org/NET/ssnx/qu/qu#Unit"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://w3id.org/iot/qo#TemperatureSensorTelosB -->
+
+    <owl:NamedIndividual rdf:about="http://w3id.org/iot/qo#TemperatureSensorTelosB">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Sensor"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27#OWLNamedIndividual_a4bb60a0_55ff_46ab_bb11_3949665ebf49 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27#OWLNamedIndividual_a4bb60a0_55ff_46ab_bb11_3949665ebf49">
+        <rdf:type rdf:resource="http://purl.oclc.org/NET/ssnx/ssn#Device"/>
+        <iot-lite:exposedBy rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#AirQualityServiceClosestStation"/>
+        <iot-lite:hasCoverage rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#City"/>
+        <rdfs:label xml:lang="en">DeviceName2</rdfs:label>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27#Zagreb -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/mjerbic/ontologies/2020/7/untitled-ontology-27#Zagreb">
+        <rdf:type rdf:resource="http://www.w3.org/2003/01/geo/wgs84_pos#Point"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.w3.org/ns/sosa#ObservationStream1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.w3.org/ns/sosa#ObservationStream1">
+        <rdf:type rdf:resource="http://www.w3.org/ns/sosa/Observation"/>
+        <sosa:madeBySensor rdf:resource="http://purl.oclc.org/NET/UNIS/fiware/iot-lite#OpticalParticalCounter"/>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.7.2018-12-02T02:23:35Z) https://github.com/owlcs/owlapi -->
+
